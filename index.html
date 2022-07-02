@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="style.sass" />
+
+    <title>Tarefas</title>
+  </head>
+  <body>
+    <span class="app-title"> Tarefas </span>
+    <div class="todo-list">
+      <div
+        role="progressbar"
+        class="mdc-linear-progress hidden"
+        aria-label="Example Progress Bar"
+        aria-valuemin="0"
+        aria-valuemax="1"
+        aria-valuenow="0"
+      >
+        <div class="mdc-linear-progress__buffer">
+          <div class="mdc-linear-progress__buffer-bar"></div>
+          <div class="mdc-linear-progress__buffer-dots"></div>
+        </div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+        <div
+          class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar"
+        >
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdc-fab--container">
+      <button class="mdc-fab mdc-fab--extended">
+        <div class="mdc-fab__ripple"></div>
+        <span class="material-icons mdc-fab__icon">add</span>
+        <span class="mdc-fab__label">adicionar</span>
+      </button>
+    </div>
+  </body>
+  <script src="app.js" charset="utf-8" type="module"></script>
+</html>

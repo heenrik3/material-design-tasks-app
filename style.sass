@@ -1,0 +1,170 @@
+@use "node_modules/@material/card"
+@use "node_modules/@material/button/styles"
+@use "node_modules/@material/dialog"
+@use "node_modules/@material/fab"
+
+@use "node_modules/@material/floating-label/mdc-floating-label"
+@use "node_modules/@material/line-ripple/mdc-line-ripple"
+@use "node_modules/@material/notched-outline/mdc-notched-outline"
+@use "node_modules/@material/textfield"
+@use "node_modules/@material/linear-progress"
+
+@include fab.core-styles
+@include card.core-styles
+@include dialog.core-styles
+@include textfield.core-styles
+@include linear-progress.core-styles
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap')
+
+// MEDIA QUERY MANAGER
+/*
+// 0 - 600px:      Phone
+// 600 - 900px:    Tablet portrait
+// 900 - 1200px:   Tablet landscape
+// [1200 - 1800] is where our normal styles apply
+// 1800px + :      Big desktop
+// $breakpoint arguement choices:
+// - phone
+// - tab-port
+// - tab-land
+// - big-desktop
+// ORDER: Base + typography > general layout + grid > page layout > components
+// 1em = 16px
+// */
+
+@mixin respond($breakpoint)
+  @if $breakpoint == phone
+    @media only screen and (max-width: 37.5em)
+      @content
+
+  @if $breakpoint == tab-port
+    @media only screen and (max-width: 56.25em)
+      @content
+
+  @if $breakpoint == tab-land
+    @media only screen and (max-width: 75em)
+      @content
+
+  @if $breakpoint == big-desktop
+    @media only screen and (min-width: 112.5em)
+      @content
+
+
+*, *:before, *:after
+  margin: 0
+  padding: 0
+  box-sizing: inherit
+
+html
+
+  @include respond(tab-land)
+    font-size: 70%
+
+  @include respond(tab-port)
+    font-size: 80%
+
+  @include respond(phone)
+    font-size: 90%
+
+body
+  box-sizing: border-box
+  height: 100vh
+  max-height: 100vh
+  display: flex
+  flex-direction: column
+  align-items: center
+  background-color: #F4F7FF
+  font-family: Roboto, sans-serif
+  color: #303030
+
+.app-title
+  margin: 5rem
+  font-size: 32px
+  letter-spacing: .15px
+
+.mdc-card
+  transition: all 1s
+
+  &-content
+    padding: 16px 16px 0 16px
+
+    & > *:not(last-child)
+      margin-bottom: 10px
+
+.todo-list
+  height: auto
+  width: 100vw
+  padding-left: 25rem
+  padding-right: 25rem
+  overflow: auto
+
+  @include respond(phone)
+    padding-left: .2rem
+    padding-right: .2rem
+
+  @include respond(big-desktop)
+    padding-left: 35rem
+    padding-right: 35rem
+
+  @include respond(tab-land)
+    padding-left: 5rem
+    padding-right: 5rem
+    // font-size: 80%
+  @include respond(tab-port)
+    padding-left: 5rem
+    padding-right: 5rem
+
+  & > *
+    margin-bottom: 1rem
+
+
+.mdc-fab
+  &--container
+    bottom: 0
+    right: 0
+    margin-right: 3rem
+    margin-bottom: 3rem
+    position: fixed
+
+.text-field__container
+  display: flex
+  flex-direction: column
+
+  & > *:not(:last-child)
+    margin-bottom: 1rem
+
+.modal
+  height: 100%
+  width: 100vw
+  position: fixed
+
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+  & > .mdc-card
+    padding: 16px
+    border-radius: .5rem
+    position: absolute
+    z-index: 5
+
+  &__content
+    padding: 8px
+
+    & > *:not(:last-child)
+      margin-bottom: 1rem
+
+  &__background
+    height: 100%
+    width: 100%
+    background-color: #00000052
+    position: absolute
+    z-index: -1
+
+.hidden
+  opacity: 0
+
+.visible
+  opacity: 1
