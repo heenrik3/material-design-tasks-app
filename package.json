@@ -1,4 +1,22 @@
 {
+  "name": "material-design-tasks-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heenrik3/material-design-tasks-app.git"
+  },
+  "author": "henrik3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heenrik3/material-design-tasks-app/issues"
+  },
+  "homepage": "https://github.com/heenrik3/material-design-tasks-app#readme",
   "dependencies": {
     "@material/button": "^14.0.0",
     "@material/card": "^14.0.0",
@@ -7,9 +25,7 @@
     "@material/icon-button": "^14.0.0",
     "@material/linear-progress": "^14.0.0",
     "@material/textfield": "^14.0.0",
-    "parcel": "^2.5.0"
-  },
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.5.0"
+    "@parcel/transformer-sass": "^2.6.2",
+    "parcel": "^2.6.2"
   }
 }
